@@ -1,0 +1,585 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif; /* Sans-serif lettertype */
+  background-color: #000; /* Zwart achtergrondkleur */
+  color: white; /* Witte tekstkleur */
+  overflow-x: hidden; /* Horizontale scrollbalk */
+}
+
+.appe- {
+  display: flex; /* Zet de elementen in een rij */
+  width: 100%; /* Breedte van de app */
+}
+
+.sidebar {
+  background-color: #000;
+  width: 150px; 
+  padding: 20px 0 20px 20px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  border-right: 1px solid #222; /* Lijn aan de rechterkant van de sidebar */
+}
+
+.sidebar .logo img {
+  width: 40px; /* Breedte van het logo */
+  margin-left: 5px;
+}
+
+.sidebar-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px; /* Grotere tekst dan normaal */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 5px;
+  width: 100%;
+}
+
+.sidebar-btn:hover {
+  color: #ff5e4d; /* Kleur verandert bij hover */
+}
+
+.sidebar-label {
+  font-size: 16px;
+}
+
+
+.feed {
+  flex: 1;
+  background-color: #111;
+  padding: 20px;
+  margin-left: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stories {
+  display: flex;
+  gap: 10px;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.story {
+  min-width: 10px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #333;
+  border: 3px solid #ff5e4d;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.story img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff5e4d;
+  object-fit: cover;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.post-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.bottom-like {
+  margin-top: 10px;
+  font-size: 40px;
+  color: #999;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.bottom-like i {
+  transition: transform 0.2s ease, color 0.2s ease;  /* Mini animatie als je op de hart klikt */
+}
+
+.liked {
+  color: red !important; /* Wordt rood als je op het hartje klikt */
+  animation: pop 0.2s ease-in-out;
+}
+
+
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.story-viewer img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.next-btn,
+.prev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.next-btn {
+  right: 30px;
+}
+.prev-btn {
+  left: 30px;
+}
+
+.close-btn:hover,
+.next-btn:hover,
+.prev-btn:hover {
+  color: #ff5e4d;
+}
+
+.profile-page,
+.profile-centralcee,
+.profile-travisscott,
+.profile-billieeilish {
+  padding: 20px;
+  margin-left: 72px;
+  background-color: #111;
+  color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ff5e4d;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-header-line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-header-line h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.profile-stats span strong {
+  font-weight: bold;
+}
+
+.profile-bio {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.profile-bio a {
+  color: #ff5e4d;
+  text-decoration: none;
+}
+
+.profile-bio a:hover {
+  text-decoration: underline;
+}
+
+.profile-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile-post img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.search-page {
+  padding: 20px;
+  margin-left: 72px;
+  background-color: #111;
+  color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.search-header {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #222;
+  color: white;
+  outline: none;
+}
+
+.search-results {
+  width: 100%;
+  max-width: 600px;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.recent-profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.recent-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.recent-profile:hover {
+  background-color: #333;
+}
+
+.recent-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff5e4d;
+}
+
+.recent-profile div {
+  font-size: 14px;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .feed,
+  .search-page,
+  .profile-page,
+  .profile-centralcee,
+  .profile-travisscott,
+  .profile-billieeilish {
+    margin-left: 0;
+    padding: 15px;
+    margin-bottom: 70px;
+  }
+
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #000;
+    border-top: 1px solid #333;
+    z-index: 1000;
+  }
+
+  .bottom-nav .nav-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .bottom-nav .nav-icon:hover {
+    color: #ff5e4d;
+    transform: scale(1.2);
+  }
+
+  .bottom-nav .nav-icon:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 768px) {
+  .post-image {
+    aspect-ratio: auto;
+  }
+
+  .post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .profile-post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .story img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.story-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.story-viewer.show {
+  display: flex;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.story-viewer img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  object-fit: contain;
+  animation: zoomIn 0.5s ease;
+}
+
+
+
+.story-viewer img.fade {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #111;
+  border-radius: 12px;
+  max-width: 95vw;
+  max-height: 95vh;
+  box-sizing: border-box;
+}
+
+#lightbox-img {
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  max-height: 80vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.lightbox-content {
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-close,
+#lightbox-prev,
+#lightbox-next {
+  position: absolute;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+
+#lightbox-close {
+  top: 20px;
+  right: 30px;
+}
+
+#lightbox-prev {
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+#lightbox-next {
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+.story-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1001;
+}
+
+.story-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff5e4d;
+  object-fit: cover;
+}
+
+.story-username {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}

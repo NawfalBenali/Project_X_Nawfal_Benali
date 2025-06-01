@@ -1,1 +1,332 @@
-TEST
+<!DOCTYPE html>
+<!--HTML 5 pagina -->
+<html lang="nl">
+
+<head>
+    <!--Speciaal tekens worden goed getoond -->
+    <meta charset="UTF-8">
+    <!--Mobielvriendelijk -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini Instagram</title>
+    <!--Link met CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!--Voor de iconen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo clickable-logo">
+                <a href="#"><img src="Logo.png" alt="Logo"></a>
+            </div>
+
+            <!--Sidebar buttons/knopjes -->
+            <button class="sidebar-btn">
+                <i class="fa-solid fa-house"></i>
+                <span class="sidebar-label">Home</span>
+            </button>
+
+            <button class="sidebar-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="sidebar-label">Zoeken</span>
+            </button>
+
+            <button class="sidebar-btn">
+                <i class="fa-solid fa-user"></i>
+                <span class="sidebar-label">Profiel</span>
+            </button>
+        </aside>
+
+        <!--Home/feed -->
+        <main class="feed">
+            <div class="stories">
+                <div class="story" data-story="0">
+                    <img src="Billie%20Eilish%20PFP.png" alt="Billie">
+                </div>
+                <div class="story" data-story="1">
+                    <img src="Central%20Cee%20PFP.jpg" alt="Central Cee">
+                </div>
+                <div class="story" data-story="2">
+                    <img src="Travis%20Scott%20PFP.jpg" alt="Travis">
+                </div>
+                <div class="story" data-story="3">
+                    <img src="Doja%20Cat%20PFP.png" alt="Doja">
+                </div>
+            </div>
+
+            <!-- Billie Eilish Post -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="Billie%20Eilish%20PFP.png" class="avatar" alt="avatar" data-story="0">
+                    <span class="username" data-profile="billieeilish">Billie Eilish</span>
+                </div>
+                <div class="post-image">
+                    <img src="Billie%20Eilish%20Post%201.webp" alt="Post van gebruiker">
+                </div>
+                <div class="bottom-like"><i class="fa-regular fa-heart"></i></div>
+            </div>
+
+            <!-- Central Cee Post -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="Central%20Cee%20PFP.jpg" class="avatar" alt="avatar" data-story="1">
+                    <span class="username" data-profile="centralcee">Central Cee</span>
+                </div>
+                <div class="post-image">
+                    <img src="Central%20Cee%20Post%201.jpg" alt="Post van gebruiker">
+                </div>
+                <div class="bottom-like"><i class="fa-regular fa-heart"></i></div>
+            </div>
+
+            <!-- Travis Scott Post -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="Travis%20Scott%20PFP.jpg" class="avatar" alt="avatar" data-story="2">
+                    <span class="username" data-profile="travisscott">Travis Scott</span>
+                </div>
+                <div class="post-image">
+                    <img src="Travis%20Scott%20Post%201.jpg" alt="Post van gebruiker">
+                </div>
+                <div class="bottom-like"><i class="fa-regular fa-heart"></i></div>
+            </div>
+        </main>
+
+        <!-- Eigen profile -->
+
+        <section class="profile-page" style="display: none">
+            <div class="profile-top">
+                <img src="Perso%20PFP.jpg" class="avatar-large" alt="avatar">
+                <div class="profile-info">
+                    <div class="profile-header-line">
+                        <h2>Nawfal</h2>
+                    </div>
+                    <div class="profile-stats">
+                        <span><strong>6</strong> posts</span>
+                        <span><strong>212</strong> volgers</span>
+                        <span><strong>125</strong> volgers</span>
+                    </div>
+                    <div class="profile-bio">
+                        <strong>Nawfal Benali</strong><br>I am a chill guy<br>
+                        <a href="https://zavo.smartschool.be/login" target="_blank">&#128279; Naar Zavo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-posts">
+                <div class="profile-post">
+                    <img src="Photo%20Perso%201.webp" alt="post">
+                </div>
+                <div class="profile-post">
+                    <img src="Photo%20Perso%202.webp" alt="post">
+                </div>
+                <div class="profile-post">
+                    <img src="Photo%20Perso%203.webp" alt="post">
+                </div>
+                <div class="profile-post">
+                    <img src="Photo%20Perso%204.webp" alt="post">
+                </div>
+                <div class="profile-post">
+                    <img src="Photo%20Perso%205.jpg" alt="post">
+                </div>
+                <div class="profile-post">
+                    <img src="Photo%20Perso%206.jpg" alt="post">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Profiles stars -->
+
+    <!-- Central Cee -->
+
+    <section class="profile-page" id="profile-centralcee" style="display: none">
+        <div class="profile-top">
+            <img src="Central%20Cee%20PFP.jpg" class="avatar-large profile-avatar" alt="avatar" data-story="1">
+            <div class="profile-info">
+                <div class="profile-header-line">
+                    <h2>Central Cee</h2>
+                </div>
+                <div class="profile-stats">
+                    <span><strong>6</strong> posts</span>
+                    <span><strong>14.6M</strong> volgers</span>
+                    <span><strong>150</strong> volgers</span>
+                </div>
+                <div class="profile-bio">
+                    <strong>centralcee</strong><br>UK rapper &#127908;
+                </div>
+            </div>
+        </div>
+        <div class="profile-posts">
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%201.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%202.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%203.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%204.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%205.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Central%20Cee%20Post%206.jpg" alt="post">
+            </div>
+        </div>
+    </section>
+
+    <!-- Travis Scott -->
+    <section class="profile-page" id="profile-travisscott" style="display: none">
+        <div class="profile-top">
+            <img src="Travis%20Scott%20PFP.jpg" class="avatar-large profile-avatar" alt="avatar" data-story="2">
+            <div class="profile-info">
+                <div class="profile-header-line">
+                    <h2>Travis Scott</h2>
+                </div>
+                <div class="profile-stats">
+                    <span><strong>6</strong> posts</span>
+                    <span><strong>59.3M</strong> volgers</span>
+                    <span><strong>200</strong> volgers</span>
+                </div>
+                <div class="profile-bio">
+                    <strong>flame</strong><br>Astroworld &#127757;&#128293;
+                </div>
+            </div>
+        </div>
+        <div class="profile-posts">
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%201.jpg" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%202.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%203.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%204.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%205.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Travis%20Scott%20Post%206.webp" alt="post">
+            </div>
+        </div>
+    </section>
+
+    <!-- Billie Eilish -->
+    <section class="profile-page" id="profile-billieeilish" style="display: none">
+        <div class="profile-top">
+            <img src="Billie%20Eilish%20PFP.png" class="avatar-large profile-avatar" alt="avatar" data-story="0">
+            <div class="profile-info">
+                <div class="profile-header-line">
+                    <h2>Billie Eilish</h2>
+                </div>
+                <div class="profile-stats">
+                    <span><strong>6</strong> posts</span>
+                    <span><strong>124M</strong> volgers</span>
+                    <span><strong>9</strong> volgers</span>
+                </div>
+                <div class="profile-bio">
+                    <strong>BILLIE EILISH</strong><br>HIT ME HARD AND SOFT &#127911;
+                </div>
+            </div>
+        </div>
+        <div class="profile-posts">
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%201.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%202.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%203.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%204.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%205.webp" alt="post">
+            </div>
+            <div class="profile-post">
+                <img src="Billie%20Eilish%20Post%206.webp" alt="post">
+            </div>
+        </div>
+    </section>
+
+    <!-- Zoekbalk met recente profiles -->
+    <section class="search-page" style="display: none">
+        <div class="search-header">
+            <input type="text" class="search-input" placeholder="Opzoeken...">
+        </div>
+        <div class="search-results">
+            <h3>Recent</h3>
+            <div class="recent-profiles">
+                <div class="recent-profile" data-profile="centralcee">
+                    <img src="Central%20Cee%20PFP.jpg" alt="Central Cee">
+                    <div>
+                        <strong>centralcee</strong><br>
+                        Central &bull; Gevolgd
+                    </div>
+                </div>
+
+                <div class="recent-profile" data-profile="travisscott">
+                    <img src="Travis%20Scott%20PFP.jpg" alt="Travis Scott">
+                    <div>
+                        <strong>travisscott</strong><br>
+                        flame &bull; Gevolgd
+                    </div>
+                </div>
+
+                <div class="recent-profile" data-profile="billieeilish">
+                    <img src="Billie%20Eilish%20PFP.png" alt="Billie Eilish">
+                    <div>
+                        <strong>billieeilish</strong><br>
+                        BILLIE EILISH &bull; Gevolgd
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gsm naviegatiebalk -->
+    <nav class="bottom-nav">
+        <i class="nav-icon fa-solid fa-house"></i>
+        <i class="nav-icon fa-solid fa-magnifying-glass"></i>
+        <i class="nav-icon fa-solid fa-user"></i>
+    </nav>
+
+    <!-- Stories -->
+    <div class="story-viewer" id="storyViewer">
+        <span class="close-btn" id="closeStory"><i class="fa-solid fa-xmark"></i></span>
+        <img id="storyImage" src="" alt="Story">
+        <button class="prev-btn" id="prevStory">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="next-btn" id="nextStory">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="story-header">
+            <img id="storyProfilePic" src="" alt="profile" class="story-profile-pic">
+            <span id="storyUsername" class="story-username">Gebruiker</span>
+        </div>
+    </div>
+
+    <!-- Toe doen, vorige, volgende -->
+    <div id="lightbox" style="display: none">
+        <span id="lightbox-close">&times;</span>
+        <span id="lightbox-prev">&#10094;</span>
+        <img id="lightbox-img" src="" alt="image lightbox">
+        <span id="lightbox-next">&#10095;</span>
+    </div>
+
+    <!--link met JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
